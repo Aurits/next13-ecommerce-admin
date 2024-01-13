@@ -4,8 +4,8 @@ import { CldUploadWidget } from 'next-cloudinary';
 import { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 import { ImagePlus, Trash } from 'lucide-react';
+import Image from 'next/image';
 
 interface ImageUploadProps {
   disabled?: boolean;
@@ -34,7 +34,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     return null;
   }
 
-  return ( 
+  return (
     <div>
       <div className="mb-4 flex items-center gap-4">
         {value.map((url) => (
@@ -53,17 +53,17 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           </div>
         ))}
       </div>
-      <CldUploadWidget onUpload={onUpload} uploadPreset="t4drjppf">
+      <CldUploadWidget onUpload={onUpload} uploadPreset="e5q76qxc">
         {({ open }) => {
           const onClick = () => {
             open();
           };
 
           return (
-            <Button 
-              type="button" 
-              disabled={disabled} 
-              variant="secondary" 
+            <Button
+              type="button"
+              disabled={disabled}
+              variant="secondary"
               onClick={onClick}
             >
               <ImagePlus className="h-4 w-4 mr-2" />
@@ -75,5 +75,5 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     </div>
   );
 }
- 
+
 export default ImageUpload;
